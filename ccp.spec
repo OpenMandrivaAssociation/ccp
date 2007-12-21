@@ -10,6 +10,7 @@ Release:	%{release}
 Source0:	%{name}-%{version}.tar.bz2
 URL:		http://ccp.nongnu.org/
 Group:		System/Configuration/Other
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 BuildArch:	noarch
 
