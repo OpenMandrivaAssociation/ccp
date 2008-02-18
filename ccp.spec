@@ -4,7 +4,7 @@
 %define	release	%mkrel %rel
 
 Name:		%{name} 
-Summary:	CCP is a program that reads configuration files and upgrades them
+Summary:	Program that reads configuration files and upgrades them
 Version:	%{version} 
 Release:	%{release} 
 Source0:	%{name}-%{version}.tar.bz2
