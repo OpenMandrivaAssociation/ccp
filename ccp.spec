@@ -1,6 +1,6 @@
 %define	name	ccp
 %define	version 0.4.1
-%define rel	1
+%define rel	2
 %define	release	%mkrel %rel
 
 Name:		%{name} 
