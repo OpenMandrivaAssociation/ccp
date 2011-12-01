@@ -45,14 +45,14 @@ and ini configs (--type ini)
 if ! ./testsuite/ccp-testsuite ; then exit 1;fi
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -vp $RPM_BUILD_ROOT%_bindir/ $RPM_BUILD_ROOT%_mandir/man1/ $RPM_BUILD_ROOT%_datadir/ccp/
-install -v -m755 ccp  $RPM_BUILD_ROOT%_bindir/
-install -v -m644 ccp.1 $RPM_BUILD_ROOT%_mandir/man1/
-cp -vr conftypes $RPM_BUILD_ROOT%_datadir/ccp/
+rm -rf %{buildroot}
+mkdir -vp %{buildroot}%_bindir/ %{buildroot}%_mandir/man1/ %{buildroot}%_datadir/ccp/
+install -v -m755 ccp  %{buildroot}%_bindir/
+install -v -m644 ccp.1 %{buildroot}%_mandir/man1/
+cp -vr conftypes %{buildroot}%_datadir/ccp/
 
 %clean 
-rm -rf $RPM_BUILD_ROOT 
+rm -rf %{buildroot} 
 
 %files 
 %defattr(-,root,root)
