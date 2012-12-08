@@ -1,6 +1,6 @@
 %define	name	ccp
 %define	version 0.4.1
-%define rel	6
+%define rel	8
 %define	release	%mkrel %rel
 
 Name:		%{name} 
@@ -45,14 +45,14 @@ and ini configs (--type ini)
 if ! ./testsuite/ccp-testsuite ; then exit 1;fi
 
 %install
-rm -rf %{buildroot}
-mkdir -vp %{buildroot}%_bindir/ %{buildroot}%_mandir/man1/ %{buildroot}%_datadir/ccp/
-install -v -m755 ccp  %{buildroot}%_bindir/
-install -v -m644 ccp.1 %{buildroot}%_mandir/man1/
-cp -vr conftypes %{buildroot}%_datadir/ccp/
+rm -rf $RPM_BUILD_ROOT
+mkdir -vp $RPM_BUILD_ROOT%_bindir/ $RPM_BUILD_ROOT%_mandir/man1/ $RPM_BUILD_ROOT%_datadir/ccp/
+install -v -m755 ccp  $RPM_BUILD_ROOT%_bindir/
+install -v -m644 ccp.1 $RPM_BUILD_ROOT%_mandir/man1/
+cp -vr conftypes $RPM_BUILD_ROOT%_datadir/ccp/
 
 %clean 
-rm -rf %{buildroot} 
+rm -rf $RPM_BUILD_ROOT 
 
 %files 
 %defattr(-,root,root)
@@ -60,4 +60,67 @@ rm -rf %{buildroot}
 %_bindir/%name
 %_mandir/*/*
 %_datadir/%name
+
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4.1-6mdv2011.0
++ Revision: 663354
+- mass rebuild
+
+* Tue Nov 30 2010 Oden Eriksson <oeriksson@mandriva.com> 0.4.1-5mdv2011.0
++ Revision: 603816
+- rebuild
+
+* Mon Mar 15 2010 Oden Eriksson <oeriksson@mandriva.com> 0.4.1-4mdv2010.1
++ Revision: 520018
+- rebuilt for 2010.1
+
+* Sun Aug 09 2009 Oden Eriksson <oeriksson@mandriva.com> 0.4.1-3mdv2010.0
++ Revision: 413220
+- rebuild
+
+* Fri Mar 06 2009 Antoine Ginies <aginies@mandriva.com> 0.4.1-2mdv2009.1
++ Revision: 350215
+- 2009.1 rebuild
+
+* Mon Feb 18 2008 Thierry Vignaud <tv@mandriva.org> 0.4.1-1mdv2009.0
++ Revision: 170223
+- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 0.4.1-1mdv2008.1
++ Revision: 136288
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Tue Jan 31 2006 Eskild Hustvedt <eskild@mandriva.org> 0.4.1-1mdk
+- New version 0.4.1
+
+* Mon Jan 30 2006 Eskild Hustvedt <eskild@mandriva.org> 0.4.0-1mdk
+- New version 0.4.0
+	o Now supports ini-files
+
+* Sat Jan 21 2006 Eskild Hustvedt <eskild@mandriva.org> 0.3.0-1mdk
+- New version 0.3.0
+	o Now supports automatic uncommenting of options in config files
+
+* Fri Jan 13 2006 Eskild Hustvedt <eskild@mandriva.org> 0.2.3-1mdk
+- New version 0.2.3
+	- Fixes the problem of invalid orphans in php.ini
+
+* Thu Jan 12 2006 Eskild Hustvedt <eskild@mandriva.org> 0.2.2-1mdk
+- New version 0.2.2
+
+* Wed Jan 11 2006 Eskild Hustvedt <eskild@mandriva.org> 0.2.1-1mdk
+- New version 0.2.1
+- Minor changes to the summary
+
+* Thu Jan 05 2006 Eskild Hustvedt <eskild@mandriva.org> 0.2-1mdk
+- New version 0.2
+
+* Tue Jan 03 2006 Eskild Hustvedt <eskild@mandrake.org> 0.1-1mdk
+- Initial Mandriva Linux package
 
