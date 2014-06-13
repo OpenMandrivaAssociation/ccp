@@ -1,7 +1,7 @@
 Summary:	Program that reads configuration files and upgrades them
 Name:		ccp
 Version:	0.4.1
-Release:	17
+Release:	18
 Group:		System/Configuration/Other
 License:	GPL
 Url:		http://random.zerodogg.org/ccp/
