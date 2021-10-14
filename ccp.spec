@@ -1,7 +1,7 @@
 Summary:	Program that reads configuration files and upgrades them
 Name:		ccp
 Version:	0.4.1
-Release:	24
+Release:	25
 Group:		System/Configuration/Other
 License:	GPL
 Url:		http://random.zerodogg.org/ccp/
@@ -33,7 +33,7 @@ key = value configs (--type keyvalue)
 and ini configs (--type ini)
 
 %prep
-%setup -q
+%autosetup -p1
 # We want the tests to succeed. A release shouldn't have failing tests
 # but better safe than sorry
 if ! ./testsuite/ccp-testsuite ; then exit 1;fi
@@ -47,6 +47,5 @@ cp -vr conftypes %{buildroot}%{_datadir}/ccp/
 %files 
 %doc TODO version AUTHORS
 %{_bindir}/%{name}
-%{_mandir}/*/*
+%doc %{_mandir}/*/*
 %{_datadir}/%{name}
-
