@@ -4,7 +4,7 @@ Version:	0.4.1
 Release:	26
 Group:		System/Configuration/Other
 License:	GPL
-Url:		http://random.zerodogg.org/ccp/
+Url:		https://random.zerodogg.org/ccp/
 Source0:	http://download.savannah.nongnu.org/releases/ccp/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
 
